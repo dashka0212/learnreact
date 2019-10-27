@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import less from 'less';
 import {NavLink} from 'react-router-dom';
+import {connect} from 'react-redux';
 class About extends React.Component {
   componentDidMount(){
   }
@@ -14,14 +15,19 @@ class About extends React.Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p className="peasedaa">
-            About
+            About Compo
           </p>
-          <NavLink exact to={"/"} className="App-link">Route to App</NavLink>
-          <NavLink exact to={"/about"} className="App-link">Learn React</NavLink>
+          <NavLink exact to={"/"} className="App-link">Home</NavLink>
+          <NavLink exact to={"/about"} className="App-link">About</NavLink>
         </header>
       </div>
     );
   }
 }
-
-export default About;
+function mapStateToProps(state){
+  console.log(state);
+  return {
+    state
+  }
+}
+export default connect(mapStateToProps)(About);

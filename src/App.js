@@ -2,27 +2,28 @@ import React from 'react';
 import logo from './logo.svg';
 import less from 'less';
 import {NavLink} from 'react-router-dom';
-import {testRed} from '../redux/actions';
+import {testRed , testReq} from '../redux/actions';
 import {connect} from 'react-redux';
 class App extends React.Component {
-
-  
-  test(text){
-    this.props.dispatch(testRed(text));
+  test(event){
+    this.props.dispatch(testRed(event.target.value));
+  }
+  testing(){
+    this.props.dispatch(testReq());
   }
   render(){
+    console.log(this.props);
     less.modifyVars({
       '@defaultColor': 'blue'
     });
-    console.log(this.props);
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p className="peasedaa" onClick={this.test.bind(this , 'aaa')}>
+          <input onChange={this.test.bind(this)}/>
+          <p className="peasedaa" onClick={this.testing.bind(this)}>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <NavLink to={"/about"} className="App-link">Learn React</NavLink>
+          <NavLink to={"/about"} className="App-link">About</NavLink>
         </header>
       </div>
     )

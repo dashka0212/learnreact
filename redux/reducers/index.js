@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import todo from './todo';
+import app from './todo';
 export default combineReducers({
-    todo
+    todo : app
 })

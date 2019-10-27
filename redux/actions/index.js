@@ -5,3 +5,8 @@ export function testRed(data) {
         data
     }
 }
+export function testReq() {
+    return {
+        type : 'TESTING'
+    }
+}
