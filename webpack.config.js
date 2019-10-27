@@ -1,5 +1,12 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const path = require('path');
 module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'main.js',
+    publicPath: '/'
+  },
   module: {
     rules: [
       {
@@ -36,6 +43,9 @@ module.exports = {
         loader: "url-loader?limit=10000&name=fonts/[name].[ext]"
       },
     ]
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebPackPlugin({
