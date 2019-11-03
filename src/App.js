@@ -6,10 +6,10 @@ import {connect} from 'react-redux';
 class App extends React.Component {
   constructor(props){
     super(props);
-      this.state = {
-        users : [],
-        todos : []
-      }
+    this.state = {
+      users : [],
+      todos : []
+    }
   }
   componentDidMount(){
     this.props.dispatch(getUsers());
