@@ -4,6 +4,13 @@ import {NavLink} from 'react-router-dom';
 import {testRed , testReq , placeHold} from '../redux/actions';
 import {connect} from 'react-redux';
 class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      users : [],
+      todos : []
+    }
+  }
   componentDidMount(){
     this.props.dispatch(placeHold());
   }
@@ -11,13 +18,7 @@ class App extends React.Component {
     this.props.dispatch(testRed(event.target.value));
   }
   testing(id){
-    fetch('https://jsonplaceholder.typicode.com/todos?userId=' + id).
-          then(res => res.json()).
-          then((data) => 
-            {
-              this.setState({todos : data})
-            }
-          ).catch();
+    console.log(id);
   }
   render(){
     console.log(this.state);
