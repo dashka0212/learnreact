@@ -17,6 +17,11 @@ export default function app(state = iniState , action){
                 ...state,
                 email : ''
             };
+        case 'jsonplace': 
+            console.log(action);
+            return state;
+        case 'holder': console.log(action);
+            return state;
         default: return state;
     }
 }

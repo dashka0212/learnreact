@@ -4,10 +4,12 @@ import '../less/style.less';
 import App from './App';
 import About from './About';
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
+import {createStore , applyMiddleware , compose} from 'redux';
 import reducers from '../redux/reducers';
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
-const store = createStore(reducers);
+import thunk from 'redux-thunk';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+const middlewares = [thunk];
+const store = createStore(reducers , window.__INITIAL_STATE__ , applyMiddleware(...middlewares));
 const Routes = (
     <Provider store={store}>
         <BrowserRouter>

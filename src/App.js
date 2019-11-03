@@ -2,9 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import less from 'less';
 import {NavLink} from 'react-router-dom';
-import {testRed , testReq} from '../redux/actions';
+import {testRed , testReq , placeHold} from '../redux/actions';
 import {connect} from 'react-redux';
 class App extends React.Component {
+  componentDidMount(){
+    this.props.dispatch(placeHold());
+  }
   test(event){
     this.props.dispatch(testRed(event.target.value));
   }
