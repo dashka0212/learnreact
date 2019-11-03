@@ -1,22 +1,29 @@
+import {
+    getUser,
+    getTodos
+} from '../actionTypes';
 const iniState = {
-    username : '',
-    password:'',
-    email:''
+    users : [],
+    todos : []
 }
 export default function app(state = iniState , action){
     switch(action.type){
         case 'testing':
-            console.log(action);
             return {
                 ...state,
                 email : action.data
             };
         case 'TESTING' :
-            console.log(action);
             return {
                 ...state,
                 email : ''
             };
+        case getUser.REQUEST : 
+            return state;
+        case getUser.RESPONSE : 
+            return {...state , users : action.json};
+        case getTodos.RESPONSE:
+            return {...state , todos : action.json};
         default: return state;
     }
 }

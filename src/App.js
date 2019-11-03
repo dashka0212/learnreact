@@ -1,7 +1,7 @@
 import React , {Component} from 'react';
 import less from 'less';
 import {NavLink} from 'react-router-dom';
-import {testRed , testReq} from '../redux/actions';
+import {testRed , getUsers , getTodos} from '../redux/actions';
 import {connect} from 'react-redux';
 class App extends React.Component {
   constructor(props){
@@ -12,44 +12,23 @@ class App extends React.Component {
       }
   }
   componentDidMount(){
-    /*
-      
-      sort();
-    */
-    //https://jsonplaceholder.typicode.com/todos?userId=1
-    fetch('https://jsonplaceholder.typicode.com/todos?userId=1').
-          then(res => res.json()).
-          then((data) => 
-            {
-              var filt = data.sort((a , b) => { 
-                return  b.title - a.title;
-              });
-              console.log(filt);
-              this.setState({todos : filt});
-            }
-          ).catch();
+    this.props.dispatch(getUsers());
   }
   test(event){
     this.props.dispatch(testRed(event.target.value));
   }
   testing(id){
-    fetch('https://jsonplaceholder.typicode.com/todos?userId=' + id).
-          then(res => res.json()).
-          then((data) => 
-            {
-              this.setState({todos : data})
-            }
-          ).catch();
+    console.log(id);
+    this.props.dispatch(getTodos(id));
   }
   render(){
-    console.log(this.state);
+    console.log(this.props.todos);
     return (
       <div className="App">
         <header className="App-header">
-          <input onChange={this.test.bind(this)}/>
           
           {
-            this.state.users.map((user) => 
+            this.props.users.map((user) => 
               <p onClick={this.testing.bind(this , user.id)}>
                 {user.name}
               </p>
@@ -63,7 +42,8 @@ class App extends React.Component {
 }
 function mapStateToProps (state) {
   return {
-    todo : state.todo
+    users : state.todo.users,
+    todos : state.todo.todos,
   }
 }
 export default connect(mapStateToProps)(App);
