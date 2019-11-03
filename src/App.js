@@ -1,5 +1,4 @@
-import React from 'react';
-import logo from './logo.svg';
+import React , {Component} from 'react';
 import less from 'less';
 import {NavLink} from 'react-router-dom';
 import {testRed , testReq , placeHold} from '../redux/actions';
@@ -11,21 +10,29 @@ class App extends React.Component {
   test(event){
     this.props.dispatch(testRed(event.target.value));
   }
-  testing(){
-    this.props.dispatch(testReq());
+  testing(id){
+    fetch('https://jsonplaceholder.typicode.com/todos?userId=' + id).
+          then(res => res.json()).
+          then((data) => 
+            {
+              this.setState({todos : data})
+            }
+          ).catch();
   }
   render(){
-    console.log(this.props);
-    less.modifyVars({
-      '@defaultColor': 'blue'
-    });
+    console.log(this.state);
     return (
       <div className="App">
         <header className="App-header">
           <input onChange={this.test.bind(this)}/>
-          <p className="peasedaa" onClick={this.testing.bind(this)}>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
+          
+          {
+            this.state.users.map((user) => 
+              <p onClick={this.testing.bind(this , user.id)}>
+                {user.name}
+              </p>
+            )
+          }
           <NavLink to={"/about"} className="App-link">About</NavLink>
         </header>
       </div>
