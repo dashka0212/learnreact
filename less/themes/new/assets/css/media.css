@@ -1,0 +1,106 @@
+@media only screen and (max-width : 1400px) {
+    .small-post .small-image {
+        min-height: 100px;
+    }
+    .top-content p {
+        max-height: 88px;
+        overflow: hidden;
+    }
+    .news-item-img {
+        /*height: 200px;
+        width: 100%;*/
+    }
+}
+
+@media only screen and (max-width : 1200px) {
+    .news-item-img {
+        /*height: 200px;
+        width: 100%;*/
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+    .small-post .small-image {
+        min-height: 200px;
+    }
+    .tab-content-featured {
+        padding-right: 40px;
+    }
+    a.featured-one {
+        max-height: inherit;
+        height: auto;
+    }
+    .nav-tabs > li > a {
+        padding: 10px 10px;
+    }
+    .space72 {
+        height: 20px;
+    }
+    .side-menu > li > a  {
+        display: block;
+    }
+    .side-menu > li > a > img {
+        
+    }
+    .side-menu > li > a > h3 {
+        display: inline-table;
+    }
+    .side-menu > li > a > span {
+        display: block;
+    }
+    .top-content {
+        padding-left: 20px;
+    }
+    .news-item-img-wrapper {
+        padding-right: 20px;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    .slide-post {
+        display: block;
+        padding: 0px;
+        box-shadow: 0px 4px 40px -10px rgba(0,64,128,0.2);
+        border: solid 1px transparent;
+    }
+    .slide-post-image {
+        height: auto;
+        display: block;
+    }
+    .slide-post-right {
+        padding-left: 20px;
+    }
+    .slide-post .slide-image .slide-title {
+        background: #fff;
+        position: relative;
+    }
+        .slide-post .slide-image .slide-title h3 {
+            color: #00589e;        
+            margin: 0;
+            padding: 0;
+        }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+    .footer-contact ul {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+    
+}
+
+@media (min-width: 1400px) {
+    .navbar > .container {
+        padding: 0;
+    }
+    #menu-main {
+        padding: 0;
+    }
+}
