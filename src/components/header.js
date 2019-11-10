@@ -61,10 +61,13 @@ class Header extends React.Component {
         </div>
         <div id="menu-main" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
+                <li>
+                    <NavLink to={"/"} className="dropdown-toggle no-ajaxify">Нүүр</NavLink>
+                </li>
                 <li  class="dropdown">
-                <NavLink to={"/about"} className="dropdown-toggle no-ajaxify">Мэдээ</NavLink>
+                <NavLink to={"/news"} className="dropdown-toggle no-ajaxify">Мэдээ</NavLink>
                     <ul class="dropdown-menu">
-                            <li><a href="m/nono_2.htm">Мэдээ мэдээлэл</a></li>
+                            <li><NavLink to={"/news"}>Мэдээ мэдээлэл</NavLink></li>
                             <li><a href="m/qofy_2.htm">Видео мэдээ</a></li>
                             <li><a href="m/qwfy_2.htm">Фото мэдээ</a></li>
                             <li><a href="m/cego_2.htm">Инфографик</a></li>

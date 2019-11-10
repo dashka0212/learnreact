@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '../less/style.less';
 import App from './App';
-import About from './About';
+import About from './components/About';
 import {Provider} from 'react-redux';
 import {createStore , applyMiddleware} from 'redux';
 import reducers from '../redux/reducers';
@@ -14,7 +14,7 @@ const Routes = (
     <Provider store={store}>
         <BrowserRouter>
             <Switch>
-                <Route path="/about" component={About}></Route>
+                <Route path="/news" component={About}></Route>
                 <Route path="/" component={App}></Route>
             </Switch>
         </BrowserRouter>

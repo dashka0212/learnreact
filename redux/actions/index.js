@@ -12,7 +12,7 @@ export function testReq() {
     }
 }
 export function getUsers(){
-    let url = 'https://jsonplaceholder.typicode.com/users';
+    let url = 'https://jsonplaceholder.typicode.com/posts';
     return network.fetchGet(actions.getUser , url);
 }
 export function getTodos(id){
