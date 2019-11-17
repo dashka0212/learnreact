@@ -6,3 +6,7 @@ export const getTodos = {
     REQUEST : 'getTodosReq',
     RESPONSE : 'getTodosRes'
 }
+export const singleNews = {
+    REQUEST : 'getSingleNewsRequest',
+    RESPONSE : 'getSingleNewsResponse'
+}
