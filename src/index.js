@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import '../less/style.less';
 import App from './App';
 import About from './components/About';
+import NewsSingle from './components/newsSingle';
 import {Provider} from 'react-redux';
 import {createStore , applyMiddleware} from 'redux';
 import reducers from '../redux/reducers';
@@ -14,6 +15,7 @@ const Routes = (
     <Provider store={store}>
         <BrowserRouter>
             <Switch>
+                <Route path="/news/:id" component={NewsSingle}></Route>
                 <Route path="/news" component={About}></Route>
                 <Route path="/" component={App}></Route>
             </Switch>

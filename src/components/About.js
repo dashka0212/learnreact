@@ -4,6 +4,7 @@ import RightMenu from './rightMenu';
 import NavMenu from './navMenu';
 import {connect} from 'react-redux';
 import {testRed , getUsers , getTodos} from '../../redux/actions';
+import {NavLink} from 'react-router-dom';
 class About extends React.Component {
   constructor(props){
     super(props);
@@ -34,7 +35,9 @@ class About extends React.Component {
                             <div className="clearfix"></div>
                             {
                               this.props.newss.map((news) => 
+                              <NavLink to={"/news/" + news.id}>
                                   <News title={news.title} desc={news.body} date={news.id}/>
+                              </NavLink>
                               )
                             }
                     </div>
@@ -58,8 +61,7 @@ function mapStateToProps(state){
 
 const News = (props) => {
   return (
-    <a href="../n/r9ky_2.htm" className="news-item">
-        <div className="row">
+    <div className="row">
                 <div className="col-md-3 col-lg-2 news-item-img-wrapper hidden-xs hidden-sm">
                     <div className="news-item-img"></div>
                 </div>
@@ -71,7 +73,6 @@ const News = (props) => {
                     </p>
                 </div>
         </div>
-    </a>
   )
 }
 
