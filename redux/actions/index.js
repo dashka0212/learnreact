@@ -23,3 +23,7 @@ export function getTodos(id){
     let url = 'https://jsonplaceholder.typicode.com/todos?userId=' + id;
     return network.fetchGet(actions.getTodos , url);
 }
+export function getNewss(){
+    let url = 'http://localhost:8081/news/all';
+    return network.fetchGet(actions.getNews , url);
+}

@@ -3,14 +3,14 @@ import Header from './header';
 import RightMenu from './rightMenu';
 import NavMenu from './navMenu';
 import {connect} from 'react-redux';
-import {testRed , getUsers , getTodos} from '../../redux/actions';
+import {getNewss , getUsers , getTodos} from '../../redux/actions';
 import {NavLink} from 'react-router-dom';
-class About extends React.Component {
+class News extends React.Component {
   constructor(props){
     super(props);
   }
   componentDidMount(){
-    this.props.dispatch(getUsers());
+    this.props.dispatch(getNewss());
   }
   render(){
     return (
@@ -25,7 +25,7 @@ class About extends React.Component {
                             <div className="page-title">
                                 <h3>  Мэдээ мэдээлэл            
                                   <span className="pull-right">
-                                      <span className="badge badge-info" data-rel="tooltip" title="Total count">2373 мэдээ</span>
+                                      <span className="badge badge-info" data-rel="tooltip" title="Total count">{this.props.newss.length} мэдээ</span>
                                   </span>
                                 </h3>
                                 <p className="category-desc">
@@ -35,8 +35,8 @@ class About extends React.Component {
                             <div className="clearfix"></div>
                             {
                               this.props.newss.map((news) => 
-                              <NavLink to={"/news/" + news.id}>
-                                  <News title={news.title} desc={news.body} date={news.id}/>
+                              <NavLink to={"/news/" + news._id}>
+                                  <Newss title={news.title} desc={news.desc} date={news.created}/>
                               </NavLink>
                               )
                             }
@@ -51,15 +51,14 @@ class About extends React.Component {
   }
 }
 function mapStateToProps(state){
-  console.log( state.todo.users);
   return {
-    newss : state.todo.users,
+    newss : state.todo.newss,
   }
 }
 
 
 
-const News = (props) => {
+const Newss = (props) => {
   return (
     <div className="row">
                 <div className="col-md-3 col-lg-2 news-item-img-wrapper hidden-xs hidden-sm">
@@ -77,4 +76,4 @@ const News = (props) => {
 }
 
 
-export default connect(mapStateToProps)(About);
+export default connect(mapStateToProps)(News);

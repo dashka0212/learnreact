@@ -10,3 +10,7 @@ export const singleNews = {
     REQUEST : 'getSingleNewsRequest',
     RESPONSE : 'getSingleNewsResponse'
 }
+export const getNews = {
+    REQUEST : 'getNewsRequest',
+    RESPONSE : 'getNewsResponse'
+}

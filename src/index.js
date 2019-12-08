@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '../less/style.less';
 import App from './App';
-import About from './components/About';
+import About from './components/News';
 import NewsSingle from './components/newsSingle';
 import NewsCreate from './components/newsCreate';
 import {Provider} from 'react-redux';
