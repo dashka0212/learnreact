@@ -27,3 +27,8 @@ export function getNewss(){
     let url = 'http://localhost:8081/news/all';
     return network.fetchGet(actions.getNews , url);
 }
+
+export function createNewNews(text){
+    let url= 'http://localhost:8081/texts/add';
+    return network.postData(actions.createNewNews , url , {text});
+}

@@ -14,3 +14,7 @@ export const getNews = {
     REQUEST : 'getNewsRequest',
     RESPONSE : 'getNewsResponse'
 }
+export const createNewNews = {
+    REQUEST: 'createNewNewsReq',
+    RESPONSE: 'createNewNewsRes'
+}

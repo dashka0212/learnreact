@@ -2,14 +2,16 @@ import {
     getUser,
     getTodos,
     singleNews,
-    getNews
+    getNews,
+    createNewNews
 } from '../actionTypes';
 const iniState = {
     users : [],
     todos : [],
     single : {},
     loader : false,
-    newss: []
+    newss: [],
+    name: ''
 }
 export default function app(state = iniState , action){
     switch(action.type){
@@ -35,6 +37,8 @@ export default function app(state = iniState , action){
             return {...state , loader : false, single : action.json};
         case getNews.RESPONSE:
             return {...state , newss: action.json.medee}
+        case createNewNews.RESPONSE:
+            return {...state , name: action.json.text};
         default: return state;
     }
 }
