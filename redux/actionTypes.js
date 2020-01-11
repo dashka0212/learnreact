@@ -18,3 +18,7 @@ export const createNewNews = {
     REQUEST: 'createNewNewsReq',
     RESPONSE: 'createNewNewsRes'
 }
+export const login = {
+    REQUEST: 'LOGIN_REQ',
+    RESPONSE: 'LOGIN_RES'
+}

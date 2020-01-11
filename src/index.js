@@ -5,6 +5,7 @@ import App from './App';
 import About from './components/News';
 import NewsSingle from './components/newsSingle';
 import newNews from './components/newNews';
+import Login from './components/login';
 import NewsCreate from './components/newsCreate';
 import {Provider} from 'react-redux';
 import {createStore , applyMiddleware} from 'redux';
@@ -17,6 +18,7 @@ const Routes = (
     <Provider store={store}>
         <BrowserRouter>
             <Switch>
+                <Route path="/login" component={Login}></Route>
                 <Route path="/news/vvsgeh" component={newNews}></Route>
                 <Route path="/news/create" component={NewsCreate}></Route>
                 <Route path="/news/:id" component={NewsSingle}></Route>

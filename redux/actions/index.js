@@ -32,3 +32,7 @@ export function createNewNews(text){
     let url= 'http://localhost:8081/texts/add';
     return network.postData(actions.createNewNews , url , {text});
 }
+export function login(data){
+    let url = 'http://localhost:8081/auth/login';
+    return network.postData(actions.login , url , data);
+}
